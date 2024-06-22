@@ -3,9 +3,11 @@ export type AppEvent = {
     title: string,
     date: string,
     description: string,
+    category: string,
     city: string,
     venue: string,
     hostedBy: string,
+    hostPhotoURL: string
     attendees: Attendee[]
 }
 
