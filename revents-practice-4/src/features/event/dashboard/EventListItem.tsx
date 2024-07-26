@@ -7,7 +7,7 @@ type Props = {
     selectedEvent: (event: AppEvent) => void;
 }
 
-export default function EventListItem({event, selectedEvent}: Props) { // eslint-disable-line
+export default function EventListItem({event, selectedEvent}: Props) { 
   return (
     <SegmentGroup>
         <Segment>
@@ -25,7 +25,7 @@ export default function EventListItem({event, selectedEvent}: Props) { // eslint
         </Segment>
         <Segment secondary>
             <List horizontal>
-                {event.attendees.map((attendee: any) => ( // eslint-disable-line
+                {event.attendees.map(attendee => (
                     <EventListAttendee attendee={attendee}/>
                 ))} 
             </List>

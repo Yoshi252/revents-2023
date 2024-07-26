@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 type State = {
     open: boolean,
     type: string | null
-    data: any // eslint-disable-line
+    data: any 
 }
 
 const initialState: State = {

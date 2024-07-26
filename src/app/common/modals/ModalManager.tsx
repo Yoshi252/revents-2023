@@ -13,7 +13,7 @@ export default function ModalManager(){
     let renderedModal;
 
     if (open && type){
-        const ModalComponent = (modalLookUp as any)[type]; //eslint-disable-line
+        const ModalComponent = (modalLookUp as any)[type];
         renderedModal = <ModalComponent data={data}/>
     }
 

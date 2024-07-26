@@ -1,10 +1,23 @@
 import { Grid } from "semantic-ui-react";
 import EventList from "./EventList";
-import { useAppSelector } from "../../../app/store/store";
+import { useAppSelector} from "../../../app/store/store";
+import { useEffect,} from "react";
+
+
+import LoadingComponent from "../../../app/layout/LoadingComponent";
+import { actions } from "../eventSlice";
+import { useFireStore } from "../../../app/hooks/firestore/useFirestore";
 
 
 export default function EventDashboard() {
-  const {events} = useAppSelector(state => state.events)
+  const {data: events, status} = useAppSelector(state => state.events);
+  const {loadCollection} = useFireStore('events');
+
+  useEffect(() => {
+    loadCollection(actions)
+  }, [loadCollection])
+
+  if (status === 'loading') return <LoadingComponent />
 
   return (
     // Semantic UI uses 16 columns

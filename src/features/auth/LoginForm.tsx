@@ -24,7 +24,7 @@ export default function LoginForm() {
                 defaultValue=''
                 placeholder='Email Address'
                 // You must put the reg expression between 2 // 
-                {...register('email', {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/})} //eslint-disable-line
+                {...register('email', {required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/})}
                 error={
                     errors.email?.type === 'required' && 'Email is required'||
                     errors.email?.type === 'pattern' && 'Email is invalid'

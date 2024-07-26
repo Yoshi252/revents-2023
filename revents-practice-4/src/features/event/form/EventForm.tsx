@@ -2,6 +2,8 @@ import { ChangeEvent, useState } from "react";
 import { Button, Form, Header, Segment } from "semantic-ui-react";
 import { AppEvent } from "../../../app/types/Event";
 import { Link } from "react-router-dom";
+import { FieldValues } from "react-hook-form";
+import { createId } from "@paralleldrive/cuid2";
 
 type Props = {
     selectedEvents: AppEvent | null;
@@ -24,6 +26,16 @@ export default function EventForm({selectedEvents}: Props) {
     const {name, value} = e.target;
     setValues({...values, [name]: value})
   }
+
+  function onSubmit(data: FieldValues) {
+    console.log(data);
+    id = id ?? createId();
+    event  
+        ? dispatch(updateEvent({...event, ...values}))
+        : dispatch(createEvent({...values, id, hostedBy: 'bob', attendees: [], hostPhotoURL: ''}));
+        navigate(`/events/${id}`);
+    }
+    
 
   return (
     <Segment clearing>

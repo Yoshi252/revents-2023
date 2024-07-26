@@ -5,7 +5,7 @@ type Props = {
   attendee: Attendee
 }
 
-export default function EventListAttendee({attendee} : Props) { // eslint-disable-line @typescript-eslint/no-explicit-any 
+export default function EventListAttendee({attendee} : Props) { 
   return (
     <List.Item>
       <Image size='mini' circular src={attendee.photoURL} />

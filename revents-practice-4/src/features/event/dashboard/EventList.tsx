@@ -6,7 +6,7 @@ type Props = {
     events: AppEvent[]
 }
 
-export default function EventList({events, selectedEvent}: Props) { // eslint-disable-line
+export default function EventList({events, selectedEvent}: Props) { 
   return (
     <>
         {events.map((event: any) => ( // eslint-disable-line
